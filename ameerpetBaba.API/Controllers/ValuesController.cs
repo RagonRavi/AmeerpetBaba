@@ -3,17 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ameerpetBaba.API.DataAccessLayer;
+using ameerpetBaba.API.DataEntities; 
+using MongoDB.Driver; 
 
 namespace ameerpetBaba.API.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+
+         DataAccess _db;
+        public ValuesController()
         {
-            return new string[] { "value1", "value2" };
+            _db = new DataAccess(); 
+        }
+        // GET api/values
+        // [HttpGet]
+        // public IEnumerable<userRoles> Get()
+        // {
+        //     DataAccess objDataAccess=new DataAccess();
+        //     return new string[] { "value1", "value2" };
+        // }
+
+         [HttpGet]
+        [Produces(typeof(IMongoCollection<userRoles>))]
+        public IActionResult Get()
+        {
+            return Ok( _db.GetUserRoles());
         }
 
         // GET api/values/5

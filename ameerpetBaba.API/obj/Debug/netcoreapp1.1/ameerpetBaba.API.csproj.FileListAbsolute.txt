@@ -6,3 +6,11 @@ D:\Projects\Ameerpet Baba\ameerpetBaba.API\bin\Debug\netcoreapp1.1\ameerpetBaba.
 D:\Projects\Ameerpet Baba\ameerpetBaba.API\obj\Debug\netcoreapp1.1\ameerpetBaba.API.AssemblyInfo.cs
 D:\Projects\Ameerpet Baba\ameerpetBaba.API\obj\Debug\netcoreapp1.1\ameerpetBaba.API.dll
 D:\Projects\Ameerpet Baba\ameerpetBaba.API\obj\Debug\netcoreapp1.1\ameerpetBaba.API.pdb
+D:\POC\AmeerpetBaba\ameerpetBaba.API\bin\Debug\netcoreapp1.1\ameerpetBaba.API.deps.json
+D:\POC\AmeerpetBaba\ameerpetBaba.API\bin\Debug\netcoreapp1.1\ameerpetBaba.API.runtimeconfig.json
+D:\POC\AmeerpetBaba\ameerpetBaba.API\bin\Debug\netcoreapp1.1\ameerpetBaba.API.runtimeconfig.dev.json
+D:\POC\AmeerpetBaba\ameerpetBaba.API\obj\Debug\netcoreapp1.1\ameerpetBaba.API.AssemblyInfo.cs
+D:\POC\AmeerpetBaba\ameerpetBaba.API\bin\Debug\netcoreapp1.1\ameerpetBaba.API.dll
+D:\POC\AmeerpetBaba\ameerpetBaba.API\bin\Debug\netcoreapp1.1\ameerpetBaba.API.pdb
+D:\POC\AmeerpetBaba\ameerpetBaba.API\obj\Debug\netcoreapp1.1\ameerpetBaba.API.dll
+D:\POC\AmeerpetBaba\ameerpetBaba.API\obj\Debug\netcoreapp1.1\ameerpetBaba.API.pdb
