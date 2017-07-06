@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    outline: 0px;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100%;
+}
+a,a:hover{ text-decoration: none; color: inherit; }
+ul,li{ margin: 0; padding: 0;}
+.page-wrap {
+    min-height: 100%;
+    margin-bottom: -40px;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+/* cards */
+.card-view {
+    border: 1px solid #DDD;
+    padding: 20px;
+    width: 277px;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    height: 120px;
+}
+.card-view h3 {
+    margin: 0;
+    padding-bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.popular-results {
+    margin-top: 30px;
+}
+.card-view .cources li {
+    display: inline-block;
+    font-size: 13px;
+}
+.card-view .cources li::after{
+    content: ",";
+}
+.card-view .cources li:last-child::after{
+    content: "";
+}
+/* footer */
+footer{ border-top: 1px solid #F6F6F6; }
+footer a{ color: #a7a6a6; font-size: 13px; padding: 0 10px;  line-height: 38px; }
+footer a:hover{ color: #333; }
+footer,
+.page-wrap:after {
+    height: 40px;
+}
