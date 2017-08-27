@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ameerpetBaba.API.DataAccessLayer;
 using ameerpetBaba.API.DataEntities; 
+using ameerpetBaba.API.Repositories; 
+using ameerpetBaba.API.Interfaces; 
 using MongoDB.Driver; 
 
 namespace ameerpetBaba.API.Controllers
@@ -12,25 +14,17 @@ namespace ameerpetBaba.API.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-
-         DataAccess _db;
-        public ValuesController()
-        {
-            _db = new DataAccess(); 
+  private readonly IUserRoles _iUserRoles;
+        public ValuesController(IUserRoles iUserRoles){
+            //_iUser = iUser;
+            _iUserRoles = iUserRoles;
         }
-        // GET api/values
-        // [HttpGet]
-        // public IEnumerable<userRoles> Get()
-        // {
-        //     DataAccess objDataAccess=new DataAccess();
-        //     return new string[] { "value1", "value2" };
-        // }
-
+ 
          [HttpGet]
         [Produces(typeof(IMongoCollection<userRoles>))]
         public IActionResult Get()
         {
-            return Ok( _db.GetUserRoles());
+            return Ok( _iUserRoles.GetAlluserRoles());
         }
 
         // GET api/values/5
