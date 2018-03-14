@@ -1,0 +1,37 @@
+{
+  "name": "ameerpetbaba",
+  "version": "1.0.0",
+  "description": "app used to register the institutes and also display their ratings",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitanyakmr/AmeerpetBaba.git"
+  },
+  "author": "Chaitanya Kumar Adhikamsetty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitanyakmr/AmeerpetBaba/issues"
+  },
+  "homepage": "https://github.com/chaitanyakmr/AmeerpetBaba#readme",
+  "dependencies": {
+    "autoprefixer": "^8.1.0",
+    "axios": "^0.16.2",
+    "bootstrap": "^3.3.7",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.1.0",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.0.0",
+    "react-hyperscript": "^3.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-toastr": "^3.0.0",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.15.6"
+  }
+}
