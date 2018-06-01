@@ -1,50 +1,63 @@
-// const webpack = require('webpack');
 const path = require('path');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const webpack = require('webpack');
 
-const DIST_DIR = path.resolve(__dirname, 'dist');
-const SRC_DIR = path.resolve(__dirname, 'src');
-
-const config = {
-  devtool: 'source-map',
-  entry: `${SRC_DIR}/index.js`,
+module.exports = {
+  entry: {
+    app: path.join(__dirname, './src/index.js'),
+    // vendor: path.join(__dirname, './src/vendor.js'),
+  },
   output: {
-    path: `${DIST_DIR}/`,
-    filename: 'bundle.js',
-    publicPath: '/',
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js',
+    chunkFilename: '[name].js',
   },
   module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: 'style-loader', options: { sourceMap: true } },
-          { loader: 'css-loader', options: { sourceMap: true } },
-          { loader: 'postcss-loader', options: { sourceMap: true } },
-          'resolve-url-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.js$/,
-        include: SRC_DIR,
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'env', 'stage-2'],
-        },
       },
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        exclude: /node_modules/,
-        options: {
-          configFile: path.join(__dirname, './.eslintrc.js'),
-          emitError: true,
-        },
+    },
+    {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    },
+    {
+      test: /\.js$/,
+      enforce: 'pre',
+      loader: 'eslint-loader',
+      exclude: /node_modules/,
+      options: {
+        configFile: path.join(__dirname, './.eslintrc.js'),
+        emitError: true,
       },
+    },
     ],
   },
+  plugins: [
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './src/index.html'),
+    }),
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          test: path.resolve(__dirname, 'node_modules'),
+          name: 'vendor',
+          enforce: true,
+          minChunks: 2,
+        },
+      },
+    },
+  },
 };
-
-module.exports = config;

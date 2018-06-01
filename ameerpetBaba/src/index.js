@@ -3,8 +3,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import h from 'react-hyperscript';
 import { Provider } from 'react-redux';
-import { router } from './app/router';
-import store from './app/store';
+import { router } from './components/router';
+import store from './components/store';
 
 export class App extends React.Component {
   render() {
@@ -12,9 +12,6 @@ export class App extends React.Component {
       h(Provider, { store }, [h(router)])
     );
   }
-
-  componentWillReceiveProps(nextProps) {
-    debugger;
-  }
 }
 render(<App />, window.document.getElementById('app'));
+
